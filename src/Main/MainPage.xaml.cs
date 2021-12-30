@@ -1,12 +1,11 @@
-﻿using Microsoft.Maui.Controls;
-using Microsoft.Maui.Essentials;
 using System;
+using Microsoft.Maui.Essentials;
 
 namespace Main
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage
     {
-        int count = 0;
+        private int _count;
 
         public MainPage()
         {
@@ -15,8 +14,8 @@ namespace Main
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
+            _count++;
+            CounterLabel.Text = $"Current count: {_count}";
 
             SemanticScreenReader.Announce(CounterLabel.Text);
         }
